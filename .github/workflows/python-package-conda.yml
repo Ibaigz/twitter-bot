@@ -10,7 +10,7 @@ jobs:
     steps:
 
       - name: checkout repo content
-        uses: actions/checkout@v2 # checkout the repository content to github runner
+        uses: actions/checkout@v3 # checkout the repository content to github runner
 
       - name: setup python
         uses: actions/setup-python@v4
@@ -33,4 +33,10 @@ jobs:
           BEARER_TOKEN: os.getenv${{ secrets.BEARER_TOKEN }}
 
         run: python main.py
-          
+      - name: Commit Changes (if any)
+        uses: EndBug/add-and-commit@v7  # Action for committing changes
+        with:
+          message: 'Automatic commit from workflow [skip ci]'  # Commit message
+          add: 'dist'  # Optionally add specific paths to commit (replace with your paths)
+          push: ${{ github.event.ref == 'refs/heads/main' }}  # Push only on main branch pushes
+      
