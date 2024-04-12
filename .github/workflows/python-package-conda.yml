@@ -26,5 +26,11 @@ jobs:
         env:
 
           SOME_SECRET: os.getenv${{ secrets.SOME_SECRET }}
+          TWITTER_API_KEY_V2: os.getenv${{ secrets.TWITTER_API_KEY_V2 }}
+          TWITTER_API_SECRET_V2: os.getenv${{ secrets.TWITTER_API_SECRET_V2 }}
+          TWITTER_ACCESS_TOKEN: os.getenv${{ secrets.TWITTER_ACCESS_TOKEN }}
+          TWITTER_ACCESS_TOKEN_SECRET: os.getenv${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
+          BEARER_TOKEN: os.getenv${{ secrets.BEARER_TOKEN }}
+
         run: python main.py
           
