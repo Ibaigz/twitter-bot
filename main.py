@@ -88,7 +88,7 @@ def post_to_twitter(data):
     print(DataParkName)
     
     # Construct the tweet text
-    text = f"\n {emoji.emojize(':backhand_index_pointing_right_light_skin_tone: ')}RANDOM COASTER OF THE DAY \n \n {emoji.emojize(':roller_coaster: ')}{data['name']} \n \n {emoji.emojize(':round_pushpin:')}in {data['park']['name']}, {data['country']} \n \n {emoji.emojize(':chains:')} A {height}m tall roller coaster with a top speed of {speed} km/h. \n \n (via RCDB) \n #RollerCoaster #CoasterBot #{DataParkName}"
+    text = f"\n {emoji.emojize(':backhand_index_pointing_right_light_skin_tone: ')}RANDOM COASTER OF THE DAY \n \n {emoji.emojize(':roller_coaster: ')}{data['name']} \n \n {emoji.emojize(':round_pushpin:')}in {data['park']['name']}, {data['country']} \n \n {emoji.emojize(':chains:')} A {height}m tall roller coaster with a top speed of {speed} km/h. \n \n #RollerCoaster #CoasterBot #{DataParkName}"
      # Create the tweet
     client.create_tweet(text=text, media_ids=[media_id])
     
